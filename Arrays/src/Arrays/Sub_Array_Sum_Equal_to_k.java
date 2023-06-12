@@ -1,46 +1,7 @@
 package Arrays;
-
+import java.util.*;
 public class Sub_Array_Sum_Equal_to_k {
 /*static	int subarraySum(int[] a, int k) {
-	int sum=0;
-	int c=0;
-	if(AscendingBinarySearch(a,k)) {
-		c++;
-	}
-	for(int i=0;i<a.length;i++) {
-		sum+=a[i];
-		a[i]=sum;
-	}
-	for(int i=0;i<a.length;i++) {
-		if(a[i]==k) {
-			c++;
-		}
-		else if(i+1<a.length && a[i+1]-a[i]==1) {
-			c++;
-		}
-	}
-	return c;
-	}
-static boolean AscendingBinarySearch(int [] a,int target) {
-	int start=0;
-	int end=a.length-1;
-	while(start<=end) {
-		int mid=start+(end-start)/2;
-		if(target>a[mid]) {
-			start=mid+1;
-		}
-		else if(target < a[mid]) {
-			end=mid-1;
-		}
-		else {
-			return true;
-		}
-	}
-	return false;
-}
-*/
-	static	int subarraySum(int[] a, int k) {
-		
 		int c=0;
 		for(int i=0;i<a.length;i++) {
 			int sum=0;
@@ -54,32 +15,26 @@ static boolean AscendingBinarySearch(int [] a,int target) {
 		return c;
 	}
 	
-	static int SubarraySum(int [] a,int k) {
-		int c=0;
-		int i=0,j=0;
+	*/
+	
+	static	int subarraySum(int[] a, int k) {
+		HashMap<Integer,Integer> map=new HashMap<>();
 		int sum=0;
-		while(j<a.length) {
-			sum+=a[j];
-			if(sum==k) {
-				c++;
-				j++;
-				sum=0;
+		int c=0;
+		map.put(0, 1);
+		for(int i=0;i<a.length;i++) {
+			sum+=a[i];		
+			if(map.containsKey(sum-k)) {
+				c+=map.get(sum-k);
 			}
-			if(sum>k) {
-				i++;
-			}
-			else {
-				j++;
-			}
+			map.put(sum, map.getOrDefault(sum, 0)+1);
+			
 		}
 		return c;
 	}
-	
-	
-	
 public static void main(String[] args) {
-	int [] a= {1,2,3};
-	int k=3;
+	int [] a= {-1,-1,1};
+	int k=0;
 	System.out.println(subarraySum(a,  k) );
 }
 }
