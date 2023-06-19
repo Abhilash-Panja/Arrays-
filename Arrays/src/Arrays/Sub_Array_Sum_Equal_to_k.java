@@ -33,7 +33,7 @@ public class Sub_Array_Sum_Equal_to_k {
 		return c;
 	}
 public static void main(String[] args) {
-	int [] a= {-1,-1,1};
+	int [] a= {15,-2,2,-8,1,7,10,23};
 	int k=0;
 	System.out.println(subarraySum(a,  k) );
 }

@@ -25,8 +25,8 @@ static int max_Length(int [] a,int k) {
 }
 
 public static void main(String[] args) {
-    int[] a = {-13, 0, 6, 15, 16, 2, 15, -12, 17, -16, 0, -3, 19, -3, 2, -9, -6};
-    int k = 15;
+    int[] a = {15,-2,2,-8,1,7,10,23};
+    int k = 0;
     System.out.println(max_Length(a, k));
 }
 }

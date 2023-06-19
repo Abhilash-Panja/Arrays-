@@ -21,7 +21,7 @@ public class Sorting_colors {
 //	}
 	static void Sorting(int [] a) {
 		int low=0,high=a.length-1,mid=0;
-		while(mid<high) {
+		while(mid<=high) {
 			switch(a[mid]) {
 			case 0:{
 				swap(a,low,mid);
@@ -48,7 +48,7 @@ public class Sorting_colors {
 		
 	}
 	public static void main(String[] args) {
-	int [] a= {2,0,2,1,1,0};
+	int [] a= {2,0,1};
 	Sorting(a);
 	System.out.println(Arrays.toString(a));
 	}
